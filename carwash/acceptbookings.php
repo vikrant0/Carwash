@@ -89,10 +89,10 @@
   
 
 <div class="sidebar">
-  <a href="admin.php">View Bookings</a>
-  <a href="addplaces.php">Add Places</a>
-  <a href="addservices.php">Add Services</a>
-  <a class="active" href="acceptbookings.php">Accept Bookings</a>
+  <a href="admin.php">View Investment</a>
+  <a href="addplaces.php">Add Company</a>
+  <a href="addservices.php">Add ESG Score</a>
+  <a class="active" href="acceptbookings.php">Accept Companies</a>
   <a href="index.php">Sign Out</a>
 </div>
 
@@ -147,8 +147,8 @@
       <!-- All Activities -->
       <div class="admin_tick" style="text-align: left;margin-bottom: 20px;">
         <div class="admin_heading" style="margin-bottom: 20px;">
-          <h1 style="text-align: center;">Accept Bookings of Customers</h1>
-          <h5 style="text-align: center;">You can also Cancel the Accepted bookings from the <B> VIEW BOOKINGS TAB</B>!!!</h5>
+          <h1 style="text-align: center;">Accept Investment of Customers</h1>
+          <h5 style="text-align: center;">You can also Cancel the Accepted Companies investment from the <B> VIEW COMPANY TAB</B>!!!</h5>
         </div>
         <!-- //create php  -->
         <!-- <h4 style="text-align: center;">Remove Club coordinator</h4> -->
@@ -173,8 +173,8 @@
               <th>User Name</th>
 
               <th>Date</th>
-              <th>Place</th>
-              <th>Service</th>
+              <th>Company</th>
+              <th>ESG Score</th>
               <th>Action</th>
               </tr>
 

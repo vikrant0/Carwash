@@ -14,7 +14,7 @@
     table {
     border-collapse: collapse;
     width: 100%;
-    /*overflow: auto;*/
+    /overflow: auto;/
     color: #588c7e;
     font-family: monospace;
     font-size: 20px;
@@ -63,7 +63,7 @@
     div.content {
       margin-left: 200px;
       padding: 1px 16px;
-      /*height: 1000px;*/
+      /height: 1000px;/
     }
 
     @media screen and (max-width: 700px) {
@@ -144,7 +144,7 @@
       <!-- All Activities -->
       <div class="admin_tick" style="text-align: left;margin-bottom: 20px;">
         <div class="admin_heading" style="margin-bottom: 20px;">
-          <h1 style="text-align: center;">Booking Status</h1>
+          <h1 style="text-align: center;">Investment Status</h1>
           
         </div>
         <!-- //create php  -->
@@ -167,11 +167,10 @@
             <table>
               <tr>
               <th>Id</th>
-              <th>InvesterName</th>
+              <th>Invester Name</th>
 
               <th>Date</th>
               <th>Company</th>
-              <th>Investment</th>
               <th>Status</th>
               </tr>
 
@@ -184,7 +183,6 @@
                   <td><?php echo $datarow['uid'] ?></td>
                   <td><?php echo $datarow['date'] ?></td>
                   <td><?php echo $datarow['place'] ?></td>
-                  <td><?php echo $datarow['service'] ?></td>
                   <td>
                     <?php 
                       if($datarow['accepted']==1){
@@ -205,19 +203,19 @@
                       border-radius: 5px;
                       padding: 0px 10px;
                       color: white;
-                      margin: 10px;">Cancel Booking</button>
+                      margin: 10px;">Cancel Investment</button>
                     <?php 
                       }
                       else if($datarow['accepted']==0){
                     ?>
                      <button 
                       style="text-decoration:none;
-                      background: black;
+                      background: green;
                       border: none;
                       border-radius: 5px;
                       padding: 0px 10px;
                       color: white;
-                      margin: 10px;">Pending</button>
+                      margin: 10px;">Accepted</button>
                       <!-- to cancel the booking -->
                      <button onclick="cancelbooking(<?php echo $datarow['bid'] ?>)" 
                       style="text-decoration:none;
@@ -226,7 +224,7 @@
                       border-radius: 5px;
                       padding: 0px 10px;
                       color: white;
-                      margin: 10px;">Cancel Booking</button>
+                      margin: 10px;">Cancel Investment</button>
                     <?php
                        }
                        else{

@@ -4,10 +4,10 @@
 	
 	session_start();
 
-	$date = $_POST['date'];
+	// $date = $_POST['date'];
 	$placeid = $_POST['placeid'];
-	$serviceid = $_POST['serviceid'];
-
+	// $serviceid = $_POST['serviceid'];
+	$today = date("Y-m-d");
 	// $place,$service;
 	if(validate()){
 
@@ -20,43 +20,25 @@
 			echo 0;
 		}
 		else{
+
 			$datarow=$check1->fetch();
 			$place=$datarow['place']; 
-		}
-
-		$check2=$db->prepare('SELECT * FROM services WHERE  (serviceid = ?)');
-		$data2=array($serviceid);
-		$check2->execute($data2);
-
-		if($check2->rowcount()==0){
-			echo 0;
-		}else{
-			$datarow=$check2->fetch();
-			$service=$datarow['servicename']; 
-		}
-
-		$check3=$db->prepare('SELECT count(*) as counttotal FROM bookings WHERE  (date = ? && place = ? && accepted<>?)');
-		$data3=array($date,$place,-1); //for below 'if' statement
-		$check3->execute($data3);
-
-		$count=$check3->fetch();
-
-		if($count['counttotal']<5){
-			//booking can happen
-			$query=$db->prepare("INSERT INTO bookings(uid,date,place,service) VALUES (?,?,?,?)");
-			$data=array($_SESSION['uid'],$date,$place,$service);
-
-			if($query->execute($data)){
-				//successfully added booking
-				echo 1;
+			$check2=$db->prepare('SELECT * FROM bookings WHERE (place=?)');
+			$data2=array($place);
+			$check2->execute($data2);
+			if($check2->rowcount()>0){
+				echo 5;
 			}
-			else echo 2;
-		}
+			else{
+				$query=$db->prepare("INSERT INTO bookings(uid,date,place) VALUES (?,?,?)");
+				$data=array($_SESSION['uid'],$today,$place);
 
-		else{
-			//booking cannot happen
-			echo 5;
-			//specified date - bookings are full
+				if($query->execute($data)){
+					//successfully added booking
+					echo 1;
+				}
+				else echo 2;
+			}
 		}
 
 	}

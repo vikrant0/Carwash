@@ -88,10 +88,10 @@
   
 
 <div class="sidebar">
-  <a class="active" href="admin.php">View Bookings</a>
-  <a href="addplaces.php">Add Places</a>
-  <a href="addservices.php">Add Services</a>
-  <a href="acceptbookings.php">Accept Bookings</a>
+  <a class="active" href="admin.php">View Invenstment</a>
+  <a href="addplaces.php">Add Company</a>
+  <a href="addservices.php">Add ESG Score</a>
+  <a href="acceptbookings.php">Accept Companies</a>
   <a href="index.php">Sign Out</a>
 </div>
 
@@ -115,7 +115,7 @@
           <!-- Add a new activity -->
         <div class="add_club_coordinator" style="margin-bottom: 20px;">
           <div class="admin_heading">
-            <h1 style="text-align: center;">No Bookings Yet!!!</h1>
+            <h1 style="text-align: center;">No Company Yet!!!</h1>
             <h5 style="text-align: center;">Accept them and come back!!!</h5>
           </div>
           <!-- <form id="activityform">

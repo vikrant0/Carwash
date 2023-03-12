@@ -87,10 +87,10 @@
 <body> 
   
 <div class="sidebar">
-  <a href="admin.php">View Bookings</a>
-  <a class="active"  href="addplaces.php">Add Places</a>
-  <a href="addservices.php">Add Services</a>
-  <a href="acceptbookings.php">Accept Bookings</a>
+  <a href="admin.php">View Investment</a>
+  <a class="active"  href="addplaces.php">Add Company</a>
+  <a href="addservices.php">Add ESG Score</a>
+  <a href="acceptbookings.php">Accept Companies</a>
   <a href="index.php">Sign Out</a>
 </div>
 
@@ -105,7 +105,7 @@
 			
 					<div class="admin_tick" style="text-align: left;margin-bottom: 20px;">
 						<div class="admin_heading" style="margin-bottom: 20px;">
-							<h1 style="text-align: center;">Available Places</h1>
+							<h1 style="text-align: center;">Available Companies</h1>
 						</div>
 						<?php
 							session_start();
@@ -115,7 +115,7 @@
 							// $data=array($_SESSION['uid']);
 							$check->execute();
 							if($check->rowcount()==0){
-								echo 'Add some places to see here!!!'; //->> 0 for account does not exist
+								echo 'Add some companies to see here!!!'; //->> 0 for account does not exist
 							}
 
 							else{
@@ -123,8 +123,8 @@
 								<table>
 									<tr>
 									<th>Id</th>
-									<th>Place</th>
-									<th>City</th>
+									<th>Company </th>
+									<th> ESG </th>
 									<th>action</th>
 									</tr>
 
@@ -167,7 +167,7 @@
 				
 					<div class="admin_tick" style="text-align: left;margin-bottom: 20px;">
 						<div class="admin_heading" style="margin-bottom: 20px;">
-							<h1 style="text-align: center;">Add Places</h1>
+							<h1 style="text-align: center;">Add Company</h1>
 						</div>
 						<form id="adminform">
 							<div class="form-group">
@@ -201,7 +201,7 @@
 				success:function(data){
 
 					if(data == 0){
-						alert('Place already exists!');
+						alert('Company already exists!');
 					}
 					else if(data == 1){
 						//successfully added place

@@ -14,7 +14,7 @@
     table {
     border-collapse: collapse;
     width: 100%;
-    /*overflow: auto;*/
+    /overflow: auto;/
     color: #588c7e;
     font-family: monospace;
     font-size: 20px;
@@ -63,7 +63,7 @@
     div.content {
       margin-left: 200px;
       padding: 1px 16px;
-      /*height: 1000px;*/
+      /height: 1000px;/
     }
 
     @media screen and (max-width: 700px) {
@@ -155,7 +155,7 @@
           </div>
 
           <!-- //available services -->
-          <div class="admin_tick" style="text-align: left;margin-bottom: 20px;">
+          <div class="admin_tick hidden" style="text-align: left;margin-bottom: 20px;">
             <div class="admin_heading" style="margin-bottom: 20px;">
               <h1 style="text-align: center;">ESG Range</h1>
             </div>
@@ -233,25 +233,30 @@
       </div>
       
     </div>
-    <div class="col-sm-12">
+    <div class="col-sm-12 img_format">
       <!-- SCREENSHOT IMAGE  -->
-      <img src=" " height="1000px" width="1000px"/>
+      <div class="admin_heading" style="margin-bottom: 20px;">
+              <h1 style="text-align: center;">ESG Range Table</h1>
+            </div>
+      <center>
+      <img src="images/info_img.png" height="571px" width="1120px"/>
+    </center>
     </div>
   </section>
 </div>
 <script type="text/javascript">
   function savedata(){
-    var date=document.getElementById('date').value;
+    // var date=document.getElementById('date').value;
     var placeid=document.getElementById('placeid').value;
-    var serviceid=document.getElementById('serviceid').value;
+    // var serviceid=document.getElementById('serviceid').value;
 
-    if(placeid!="" && serviceid!="" && date!=""){
+    if(placeid!=""){
       
       $.ajax(
       {
         type:"POST",
         url:"ajax/book_service.php",
-        data:{date:date,placeid:placeid, serviceid:serviceid},
+        data:{placeid:placeid},
         success:function(data){
 
           if(data == 0){
@@ -264,7 +269,7 @@
 
           }
           else if(data == 5){
-            alert('Bookings full on that day!! choose another');
+            alert('Investment to same company already done');
           }
           else{
             alert(data);

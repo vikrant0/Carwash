@@ -87,10 +87,10 @@
 <body> 
   
 <div class="sidebar">
-  <a href="admin.php">View Bookings</a>
-  <a href="addplaces.php">Add Places</a>
-  <a class="active" href="addservices.php">Add Services</a>
-  <a href="acceptbookings.php">Accept Bookings</a>
+  <a href="admin.php">View Investment</a>
+  <a href="addplaces.php">Add Company</a>
+  <a class="active" href="addservices.php">Add ESG Score</a>
+  <a href="acceptbookings.php">Accept Companies</a>
   <a href="index.php">Sign Out</a>
 </div>
 
